@@ -14,3 +14,15 @@ echo "Total CPU Usage: $cpu_usage%"
 echo "Gather Memory usage..."
 memory_stats=$(free -m | awk 'NR==2{printf "Total: %s MB , Used: %s MB, Free: %s MB Used Percentage: %.2f%%", $2, $3, $4, ($3/$2)*100}')
 echo "Memory Usage": $memory_stats
+
+#Gather Disk Usage
+echo "Gathering Disk usage..."
+disk_usage=$(df -h --output=size,used,avail,pcent / | tail -1)
+
+#Parse output to separate the values
+disk_total=$(echo $disk_usage | awk '{print $1}')
+disk_used=$(echo $disk_usage | awk '{print $2}')
+disk_free=$(echo $disk_usage | awk '{print $3}')
+disk_percentage=$(echo $disk_usage | awk '{print $4}')
+
+echo "Disk usage: Total: $disk_total, Used: $disk_used, Free: $disk_free, Used Percentage: $disk_percentage"
