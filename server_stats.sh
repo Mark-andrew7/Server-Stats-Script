@@ -40,3 +40,15 @@ echo "Gathering Top 5 Processes by memory usage..."
 top_mem_processes=$(ps aux --sort=-%mem | head -n 6)
 echo "Top 5 processes by memory usage:"
 echo $top_mem_processes
+
+
+#OS version
+echo "Gathering os version..."
+os_version=$(uname -a)
+echo "OS version: $os_version"
+
+
+#System uptime
+echo "Gathering system uptime..."
+uptime_info=$(uptime)
+echo "Uptime: $uptime_info"
