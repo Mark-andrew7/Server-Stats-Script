@@ -55,6 +55,5 @@ Contributing
 
 If you'd like to contribute, feel free to fork the repository and submit a pull request.
 
-License
-
-This project is licensed under the MIT License.
+Project page URL:
+    https://roadmap.sh/projects/server-stats
