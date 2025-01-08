@@ -26,3 +26,17 @@ disk_free=$(echo $disk_usage | awk '{print $3}')
 disk_percentage=$(echo $disk_usage | awk '{print $4}')
 
 echo "Disk usage: Total: $disk_total, Used: $disk_used, Free: $disk_free, Used Percentage: $disk_percentage"
+
+
+#Gather top 5 processes by CPU usage
+echo "Gathering Top 5 Processes by CPU usage..."
+top_cpu_processes=$(ps aux --sort=-%cpu | head -n 6)
+echo "Top 5 processes by CPU usage:"
+echo $top_cpu_processes
+
+
+#Gather Top 5 Processes By Memory usage
+echo "Gathering Top 5 Processes by memory usage..."
+top_mem_processes=$(ps aux --sort=-%mem | head -n 6)
+echo "Top 5 processes by memory usage:"
+echo $top_mem_processes
